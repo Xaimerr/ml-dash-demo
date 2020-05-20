@@ -12,6 +12,33 @@ If you run it on an actual Dragon radio node, it will connect to the database. I
 
 ![assets/database.png](assets/database.png)
 
+### How to create a local DB
+#### Set up MySQL
+
+0. Get the `mysql-apt-config` from the mysql webpage
+1. Install the downloaded MySQL-apt-package: `sudo dpkg -i /PATH/version-specific-package-name.deb`
+2. `sudo apt-get update`
+3. `sudo apt-get install mysql-server mysql-shell`
+4. You'll be prompted for the password for root, put one and you are ready!
+
+To check, run `sudo service mysql status`, to stop instead of status do `stop`, to start use `start`.
+
+#### Create the DATABASE and a table
+
+1. `mysql -u root -p` - when prompted, put the password used when setting this up
+2. `CREATE DATABASE db_name;` - creates DB with name "db_name"
+   - `DROP DATABASE db_name` - deletes DB with name "db_name"
+3. `USE db_name;` - to use "db_name"
+   - `SHOW tables;` - shows the tables within the databse "db_name" (NOTE: if the DB is new, you'll get: “Empty set”).
+4. Create the table in the DB we just created:
+        CREATE TABLE rala (
+        timestampt TIME,
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        state INT,
+        rssi FLOAT)
+5. Test it by adding the first entry:
+        INSERT INTO `rala` (`timestampt`, `state`, `rssi`) VALUES ('2020-05-08 18:01:25', 4, -12.425);`
+
 ### How to populate the DB to run locally
 
 For this purpose, we have `fill_db.py`, it will generate N_samples following a multivariate normal distribution for all K antenna states and store them in a local database (it needs to be previously set up).
