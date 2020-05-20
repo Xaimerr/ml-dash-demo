@@ -75,10 +75,6 @@ To check, run `sudo service mysql status`, to stop instead of status do `stop`, 
 
 For this purpose, we have `fill_db.py`, it will generate N_samples following a multivariate normal distribution for all K antenna states and store them in a local database (it needs to be previously set up).
 
-## Resources
-
-- To learn more about Dash, check out the [documentation](https://plot.ly/dash).
-
 ### PYENV - to have virtual environments
 1. Check out pyenv where you want it installed. A good place to choose is $HOME/.pyenv (but you can install it somewhere else).
 
@@ -118,3 +114,7 @@ If you have one of those versions as global, it's interesting for example for py
 
 Now we should have a folder .venv that has all the configurations of our system wide python and we can use it with pycharm.
 
+
+## Resources
+
+- To learn more about Dash, check out the [documentation](https://plot.ly/dash).
