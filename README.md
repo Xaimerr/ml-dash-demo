@@ -6,6 +6,38 @@ This app queries a MySQL database every second and uses the data to update the R
 
 The info regarding the database is stored on info.py. Make sure to update once the repo is cloned.
 
+
+## How to run
+
+Clone this repository and open a terminal inside the root folder. Activate the venv:
+
+`source .venv/bin/activate`
+
+Run the app:
+
+`python app.py`
+
+Open the browser at http://127.0.0.1:8050
+
+If the above didn't work, all you need is a virtual environment with python 3.6.2 and the following requirements:
+
+    dash==1.0.0
+    numpy==1.16.4
+    pandas==0.24.2
+    scipy==1.3.0
+    gunicorn==19.9.0
+    mysqlclient==1.4.6
+
+If mysqlclient gives you issues, run:
+
+`sudo apt install python3-dev libmysqlclient-dev`
+
+If you don't have virtual environments set up, you can do so with PYENVs (see last section).
+
+## Screenshots
+
+![assets/demo.gif](assets/demo.gif)
+
 ## Setting up the DB
 
 If you run it on an actual Dragon radio node, it will connect to the database. If not you will have to set one up. It should look like this (make sure the name of the db is `ml` or update it in the files (in `api.py`):
@@ -42,37 +74,6 @@ To check, run `sudo service mysql status`, to stop instead of status do `stop`, 
 ### How to populate the DB to run locally
 
 For this purpose, we have `fill_db.py`, it will generate N_samples following a multivariate normal distribution for all K antenna states and store them in a local database (it needs to be previously set up).
-
-## How to run
-
-Clone this repository and open a terminal inside the root folder. Activate the venv:
-
-`source .venv/bin/activate`
-
-Run the app:
-
-`python app.py`
-
-Open the browser at http://127.0.0.1:8050
-
-If the above didn't work, all you need is a virtual environment with python 3.6.2 and the following requirements:
-
-    dash==1.0.0
-    numpy==1.16.4
-    pandas==0.24.2
-    scipy==1.3.0
-    gunicorn==19.9.0
-    mysqlclient==1.4.6
-
-If mysqlclient gives you issues, run:
-
-`sudo apt install python3-dev libmysqlclient-dev`
-
-If you don't have virtual environments set up, you can do so with PYENVs (see last section).
-
-## Screenshots
-
-![assets/demo.gif](assets/demo.gif)
 
 ## Resources
 
