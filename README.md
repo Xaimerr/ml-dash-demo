@@ -92,9 +92,9 @@ For this purpose, we have `fill_db.py`, it will generate N_samples following a m
 6. Install Python versions into $(pyenv root)/versions. For example, to download and install Python 2.7.8, run:
         pyenv install 2.x.x # or 3.x.x
         pyenv global x.x.x
-        pip install virtualenv
+        pip install venv
         pip install --upgrade pip #Update pip
-        virtualenv .venv # Whenever you have your python as you need it, export it with this command.
+        venv .venv # or python -m venv /path/to/new/virtual/environment  
 
 #### To use the venv:
         source .venv/bin/activate
@@ -109,8 +109,8 @@ How to use PYENV and VENV:
 If you have one of those versions as global, it's interesting for example for pycharm to save that system wide python as a venv that can be used later on on a project. So for example lets say we want to have the current system wide python as a venv that can be used by pycharm:
 
     cd /path/to/project/folder
-    pip install virtualenv
-    virtualenv .venv
+    pip install venv
+    venv .venv # or python -m venv /path/to/new/virtual/environment  
 
 Now we should have a folder .venv that has all the configurations of our system wide python and we can use it with pycharm.
 
